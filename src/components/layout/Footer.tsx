@@ -1,11 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Send, Mail } from "lucide-react";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-brand-beige border-t border-brand-beige-dark py-12 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="w-full relative bg-brand-beige border-t border-brand-beige-dark mt-auto overflow-hidden">
+      <div className="absolute inset-x-0 bottom-0 h-32 z-0">
+        <Image src="/images/bg_pattern_footer_border.png" alt="" aria-hidden="true" fill sizes="100vw" className="object-cover object-bottom opacity-25 pointer-events-none" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
           
           <div className="flex flex-col gap-4">

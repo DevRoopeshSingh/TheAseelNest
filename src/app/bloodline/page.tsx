@@ -1,6 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
-import { ImageGallery } from "@/components/ui/ImageGallery";
+import { ImageGallery, GalleryItem } from "@/components/ui/ImageGallery";
 
 export const metadata = {
   title: "Bloodline & Gallery | The Aseel Nest",
@@ -16,13 +16,13 @@ const TRAITS = [
   "Aggressive yet disciplined temperament"
 ];
 
-const GALLERY_IMAGES = [
-  "/images/aseel_gallery_one_1774342457261.png",
-  "/images/aseel_gallery_two_1774342477735.png",
-  "/images/aseel_gallery_three_1774342498807.png",
-  "/images/aseel_gallery_four_1774342516930.png",
-  "/images/aseel_gallery_five_1774342538886.png",
-  "/images/aseel_gallery_six_1774342558444.png",
+const GALLERY_IMAGES: GalleryItem[] = [
+  { src: "/images/aseel_gallery_one_1774342457261.png", alt: "Close-up of premium Parrot Beak Aseel chick showing curved beak structure" },
+  { src: "/images/aseel_gallery_two_1774342477735.png", alt: "Young white Aseel bird in outdoor farm setting displaying upright posture" },
+  { src: "/images/aseel_gallery_three_1774342498807.png", alt: "Group of pureblood Aseel chicks resting in a wooden brood box" },
+  { src: "/images/aseel_gallery_four_1774342516930.png", alt: "Side profile of a muscular Aseel rooster highlighting aggressive stance" },
+  { src: "/images/aseel_gallery_five_1774342538886.png", alt: "Detail shot of pristine white feather quality on adult Aseel" },
+  { src: "/images/aseel_gallery_six_1774342558444.png", alt: "Majestic Aseel hen traversing the farm property in natural sunlight" },
 ];
 
 export default function Bloodline() {
@@ -37,7 +37,7 @@ export default function Bloodline() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
         <div className="relative aspect-square md:aspect-auto md:h-[500px] rounded-sm overflow-hidden border border-brand-beige-dark shadow-sm">
-          <Image src="/images/aseel_hero_bloodline_1774342439286.png" alt="The Anatomy of Perfection - Premium Aseel" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+          <Image src="/images/aseel_hero_bloodline_1774342439286.png" alt="Purebred White Parrot Beak Aseel Profile" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
         </div>
         
         <div>

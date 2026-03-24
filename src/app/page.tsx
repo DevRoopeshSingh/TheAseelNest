@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-sand">
-        <Image src="/images/aseel_home_hero_1774342580167.png" alt="Aseel Flock" fill className="object-cover opacity-20 mix-blend-multiply pointer-events-none" priority />
+        <Image src="/images/aseel_home_hero_1774342580167.png" alt="" aria-hidden="true" fill className="object-cover opacity-20 mix-blend-multiply pointer-events-none" priority />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-green/5 rounded-full blur-[120px] z-0" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
@@ -46,25 +46,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-white relative border-y border-brand-beige">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Feature Cards Section with Subtle Farm Texture Background */}
+      <section className="relative py-24 border-y border-brand-beige flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/bg_pattern_farm_texture.png" alt="" aria-hidden="true" fill sizes="100vw" className="object-cover pointer-events-none" />
+          <div className="absolute inset-0 bg-white/90" />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="flex flex-col items-center text-center group">
-              <div className="w-16 h-16 rounded-full bg-brand-sand border border-brand-beige-dark flex items-center justify-center mb-6 group-hover:border-brand-gold group-hover:bg-brand-green/5 group-hover:scale-110 transition-all duration-300 shadow-sm">
+            <div className="flex flex-col items-center text-center group bg-white/50 backdrop-blur-sm p-8 rounded-sm border border-brand-beige shadow-sm">
+              <div className="w-16 h-16 rounded-full bg-white border border-brand-beige-dark flex items-center justify-center mb-6 group-hover:border-brand-gold group-hover:bg-brand-green/5 group-hover:scale-110 transition-all duration-300 shadow-sm">
                 <ShieldCheck className="text-brand-green" size={32} />
               </div>
               <h3 className="text-xl font-serif font-bold mb-3 text-brand-text tracking-wide">Pure Bloodlines</h3>
               <p className="text-brand-text-muted leading-relaxed font-light">Guaranteed authentic Parrot Beak Aseel lineage, selectively bred for the finest genetic traits.</p>
             </div>
-            <div className="flex flex-col items-center text-center group">
-              <div className="w-16 h-16 rounded-full bg-brand-sand border border-brand-beige-dark flex items-center justify-center mb-6 group-hover:border-brand-gold group-hover:bg-brand-green/5 group-hover:scale-110 transition-all duration-300 shadow-sm">
+            <div className="flex flex-col items-center text-center group bg-white/50 backdrop-blur-sm p-8 rounded-sm border border-brand-beige shadow-sm">
+              <div className="w-16 h-16 rounded-full bg-white border border-brand-beige-dark flex items-center justify-center mb-6 group-hover:border-brand-gold group-hover:bg-brand-green/5 group-hover:scale-110 transition-all duration-300 shadow-sm">
                 <Bird className="text-brand-green" size={32} />
               </div>
               <h3 className="text-xl font-serif font-bold mb-3 text-brand-text tracking-wide">Exceptional Quality</h3>
               <p className="text-brand-text-muted leading-relaxed font-light">Each chick is raised with precision care at our Maharashtra facility, ensuring robust health and perfect structural development.</p>
             </div>
-            <div className="flex flex-col items-center text-center group">
-              <div className="w-16 h-16 rounded-full bg-brand-sand border border-brand-beige-dark flex items-center justify-center mb-6 group-hover:border-brand-gold group-hover:bg-brand-green/5 group-hover:scale-110 transition-all duration-300 shadow-sm">
+            <div className="flex flex-col items-center text-center group bg-white/50 backdrop-blur-sm p-8 rounded-sm border border-brand-beige shadow-sm">
+              <div className="w-16 h-16 rounded-full bg-white border border-brand-beige-dark flex items-center justify-center mb-6 group-hover:border-brand-gold group-hover:bg-brand-green/5 group-hover:scale-110 transition-all duration-300 shadow-sm">
                 <Star className="text-brand-green" size={32} />
               </div>
               <h3 className="text-xl font-serif font-bold mb-3 text-brand-text tracking-wide">Premium Service</h3>
@@ -107,9 +113,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Instagram Feed Section */}
-      <section className="py-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Instagram Feed Section with Abstract Aseel Watermark Background */}
+      <section className="relative py-24 flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/bg_pattern_aseel_watermark.png" alt="" aria-hidden="true" fill sizes="100vw" className="object-cover pointer-events-none" />
+          <div className="absolute inset-0 bg-brand-sand/85" />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-brand-green mb-6">From The Nest</h2>
             <p className="text-lg text-brand-text-muted leading-relaxed font-light">
