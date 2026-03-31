@@ -40,9 +40,9 @@ export default function Pricing() {
                 <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-2 text-brand-text">Pure Parrot Beak Aseel Chick</h2>
                 <p className="text-brand-text-muted font-light">Age: 1 to 3 months | Fully Vaccinated</p>
               </div>
-              <div className="text-center md:text-right">
-                <span className="text-4xl sm:text-5xl font-bold text-brand-green font-serif">₹4,000</span>
-                <span className="block text-brand-text-muted text-sm mt-1">per piece</span>
+              <div className="flex items-baseline justify-center md:justify-end gap-2 text-center md:text-right w-full md:w-auto">
+                <span className="text-4xl sm:text-5xl font-bold text-brand-green font-serif whitespace-nowrap">₹4,000</span>
+                <span className="text-brand-text-muted text-base">per piece</span>
               </div>
             </div>
 
