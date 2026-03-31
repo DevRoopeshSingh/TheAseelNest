@@ -18,7 +18,7 @@ export default function Pricing() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-brand-green mb-6">Investment in Quality</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-brand-green mb-6">Investment in Quality</h1>
           <p className="text-lg text-brand-text-muted leading-relaxed font-light">
             We believe in complete transparency. Our pricing reflects the unparalleled genetic quality, rigorous care, and sheer exclusivity of our Parrot Beak Aseel lineage.
           </p>
@@ -37,11 +37,11 @@ export default function Pricing() {
             
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-b border-brand-beige-dark pb-8 mb-8 mt-6 md:mt-0">
               <div>
-                <h2 className="text-3xl font-serif font-bold mb-2 text-brand-text">Pure Parrot Beak Aseel Chick</h2>
-                <p className="text-brand-text-muted font-light">Age: 1 to 2 months | Fully Vaccinated</p>
+                <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-2 text-brand-text">Pure Parrot Beak Aseel Chick</h2>
+                <p className="text-brand-text-muted font-light">Age: 1 to 3 months | Fully Vaccinated</p>
               </div>
               <div className="text-center md:text-right">
-                <span className="text-5xl font-bold text-brand-green font-serif">₹4,000</span>
+                <span className="text-4xl sm:text-5xl font-bold text-brand-green font-serif">₹4,000</span>
                 <span className="block text-brand-text-muted text-sm mt-1">per piece</span>
               </div>
             </div>
@@ -93,8 +93,8 @@ export default function Pricing() {
             </p>
           </div>
 
-          <div className="relative z-10 bg-white/70 backdrop-blur-md p-8 rounded-sm shadow-sm border border-brand-beige-dark">
-            <h2 className="text-3xl font-serif font-bold text-center mb-10 text-brand-text">Frequently Asked Questions</h2>
+          <div className="relative z-10 bg-white/70 backdrop-blur-md p-8 rounded-sm shadow-sm border border-brand-beige-dark" aria-labelledby="faq-heading">
+            <h2 id="faq-heading" className="text-2xl sm:text-3xl font-serif font-bold text-center mb-10 text-brand-text">Frequently Asked Questions</h2>
             <FaqAccordion />
           </div>
         </div>
