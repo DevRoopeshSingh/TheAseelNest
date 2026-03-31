@@ -1,83 +1,54 @@
 import Image from "next/image";
-import { Heart, MessageCircle, Send, Bookmark, MoreHorizontal } from "lucide-react";
 
 const posts = [
   {
     image: "/images/aseel_gallery_one_1774342457261.png",
-    alt: "Parrot Beak Aseel chick from The Aseel Nest",
+    alt: "Parrot Beak Aseel chick showing curved beak structure",
     likes: "1,245",
-    caption: "Our latest batch of Parrot Beak Aseel chicks showing exceptional bone density and structure. Pure aggressive stance even at this age. #Aseel #ParrotBeakAseel",
-    date: "2 DAYS AGO",
+    caption: "Our latest batch showing exceptional bone density and structure. Pure aggressive stance even at this age.",
     priority: true,
   },
   {
     image: "/images/aseel_gallery_two_1774342477735.png",
-    alt: "Young white Aseel bird from The Aseel Nest",
+    alt: "Young white Aseel bird at The Aseel Nest",
     likes: "892",
-    caption: "Perfection in genetics. The classic pearl eye and short curved beak that defines the true Indian heritage breed. #AseelBreeders #PoultryFarm",
-    date: "5 DAYS AGO",
+    caption: "Perfection in genetics. The classic pearl eye and short curved beak that defines the true Indian heritage breed.",
     priority: false,
   },
   {
     image: "/images/aseel_gallery_three_1774342498807.png",
-    alt: "Group of Aseel chicks at The Aseel Nest farm",
+    alt: "Group of premium Aseel chicks at farm",
     likes: "2,104",
-    caption: "Secure your bloodline today. We are taking advance bookings for the upcoming season. Strict quality control at our Maharashtra facility. #TheAseelNest",
-    date: "1 WEEK AGO",
+    caption: "Taking advance bookings for the upcoming season. Strict quality control at our Maharashtra facility.",
     priority: false,
   }
 ];
 
 export function InstagramFeed() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post, i) => (
-        <article key={i} className="w-full max-w-[340px] bg-white border border-brand-beige-dark rounded-[3px] overflow-hidden shadow-sm flex flex-col hover:-translate-y-1 transition-transform duration-300">
-          {/* Header */}
-          <div className="flex items-center justify-between p-3 border-b border-brand-beige-dark/50">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-brand-green flex items-center justify-center text-white font-serif text-xs font-bold shrink-0" aria-hidden="true">
-                AN
-              </div>
-              <div>
-                <p className="text-sm font-bold text-gray-900 leading-none mb-1">theaseelnest</p>
-                <p className="text-[10px] text-gray-500 leading-none">Maharashtra, India</p>
-              </div>
-            </div>
-            <MoreHorizontal size={20} className="text-gray-400" aria-hidden="true" />
-          </div>
-          
-          {/* Image */}
-          <div className="relative aspect-square w-full">
+        <article key={i} className="bg-brand-sand/50 border border-brand-beige rounded overflow-hidden hover:shadow-md transition-shadow duration-300 group">
+          {/* Square image */}
+          <div className="relative aspect-square w-full overflow-hidden">
             <Image
               src={post.image}
               alt={post.alt}
               fill
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 340px"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               priority={post.priority}
             />
           </div>
-          
-          {/* Actions */}
-          <div className="p-3 flex-grow flex flex-col">
-            <div className="flex justify-between mb-3">
-              <div className="flex gap-4">
-                <Heart size={24} className="text-gray-800 hover:text-red-500 cursor-pointer transition-colors" aria-label="Like" />
-                <MessageCircle size={24} className="text-gray-800 cursor-pointer hover:text-gray-500 transition-colors" aria-label="Comment" />
-                <Send size={24} className="text-gray-800 cursor-pointer hover:text-gray-500 transition-colors" aria-label="Share" />
-              </div>
-              <Bookmark size={24} className="text-gray-800 cursor-pointer hover:text-gray-500 transition-colors" aria-label="Save" />
+          {/* Card body */}
+          <div className="p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-6 h-6 rounded-full bg-brand-green flex items-center justify-center text-white text-[9px] font-bold shrink-0" aria-hidden="true">AN</div>
+              <span className="text-xs font-semibold text-brand-text">theaseelnest</span>
+              <span className="text-[10px] text-brand-text-muted">• Maharashtra</span>
             </div>
-            
-            <p className="font-bold text-sm text-gray-900 mb-1">{post.likes} likes</p>
-            <p className="text-sm text-gray-800 line-clamp-2 leading-snug flex-grow">
-              <span className="font-bold mr-2">theaseelnest</span>
-              {post.caption}
-            </p>
-            <time className="text-[10px] text-gray-400 mt-2 tracking-wide font-medium uppercase block">
-              {post.date}
-            </time>
+            <p className="text-xs text-brand-text-muted leading-relaxed line-clamp-2 mb-2">{post.caption}</p>
+            <p className="text-xs font-semibold text-brand-text">{post.likes} likes</p>
           </div>
         </article>
       ))}
