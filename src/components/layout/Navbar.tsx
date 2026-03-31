@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -19,7 +19,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: KeyboardEvent): void => {
       if (e.key === "Escape") setIsOpen(false);
     };
     document.addEventListener("keydown", handleKeyDown);
@@ -31,8 +31,9 @@ export function Navbar() {
   }, [pathname]);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = (): void => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Set initial state on mount to avoid SSR mismatch
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

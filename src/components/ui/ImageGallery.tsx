@@ -24,6 +24,10 @@ export function ImageGallery({ images }: ImageGalleryProps) {
             key={i} 
             className="group relative aspect-square rounded-sm overflow-hidden border border-brand-beige-dark hover:border-brand-green shadow-sm hover:shadow-md transition-all duration-300 cursor-zoom-in"
             onClick={() => setIndex(i)}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setIndex(i); } }}
+            role="button"
+            tabIndex={0}
+            aria-label={`View ${img.alt} in fullscreen`}
           >
             <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>

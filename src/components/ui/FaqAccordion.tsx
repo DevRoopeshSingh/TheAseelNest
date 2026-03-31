@@ -17,7 +17,7 @@ const FAQS: FAQItem[] = [
 export function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
+  const toggle = (i: number): void => setOpenIndex(openIndex === i ? null : i);
 
   return (
     <div className="w-full max-w-3xl mx-auto space-y-4">
@@ -26,11 +26,13 @@ export function FaqAccordion() {
           <button 
             className="w-full text-left px-6 py-5 font-serif font-bold text-brand-text flex items-center justify-between focus:outline-none hover:bg-brand-sand/50 transition-colors"
             onClick={() => toggle(i)}
+            aria-expanded={openIndex === i}
+            aria-controls={`faq-panel-${i}`}
           >
             {faq.question}
             <ChevronDown className={`shrink-0 text-brand-green transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`} size={20} />
           </button>
-          <div className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div id={`faq-panel-${i}`} role="region" className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 opacity-0'}`}>
             <p className="text-brand-text-muted text-sm leading-relaxed border-t border-brand-beige-dark/50 pt-4">{faq.answer}</p>
           </div>
         </div>

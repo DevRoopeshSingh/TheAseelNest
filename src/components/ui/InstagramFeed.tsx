@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-const posts = [
+interface InstagramPost {
+  readonly image: string;
+  readonly alt: string;
+  readonly likes: string;
+  readonly caption: string;
+  readonly priority: boolean;
+}
+
+const posts: readonly InstagramPost[] = [
   {
     image: "/images/aseel_gallery_one_1774342457261.png",
     alt: "Parrot Beak Aseel chick showing curved beak structure",

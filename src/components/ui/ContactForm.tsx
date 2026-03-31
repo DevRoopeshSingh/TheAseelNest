@@ -57,8 +57,9 @@ export function ContactForm() {
       if (error) throw error;
       toast.success("Inquiry sent successfully! We will contact you soon.");
       reset();
-    } catch (error) {
-      console.error(error);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Unknown error";
+      console.error("Supabase submission failed:", message);
       toast.error("Failed to send inquiry. Please try WhatsApp directly.");
     } finally {
       setIsSubmitting(false);
